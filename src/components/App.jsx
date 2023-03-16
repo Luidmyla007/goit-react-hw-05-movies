@@ -1,9 +1,10 @@
-
+import { Routes, Route } from 'react-router-dom';
+import { StartPage } from '../Pages/Layout/Layout';
 
 export const App = () => {
   return (
-    <div>
-      React homework template
-    </div>
+     <Routes>
+      <Route path="/" element={<StartPage />}></Route>      
+    </Routes>
   );
 };
