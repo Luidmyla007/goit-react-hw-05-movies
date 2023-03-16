@@ -1,10 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
-import { StartPage } from '../Pages/Layout/Layout';
+import { Layout } from '../Pages/Layout/Layout';
 
 export const App = () => {
   return (
      <Routes>
-      <Route path="/" element={<StartPage />}></Route>      
+      <Route path="/" element={<Layout />}></Route>      
     </Routes>
   );
 };
