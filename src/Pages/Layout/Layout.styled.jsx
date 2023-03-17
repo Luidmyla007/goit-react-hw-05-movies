@@ -16,6 +16,7 @@ padding-top: 50px;
   > nav {
     display: flex;
     gap: 30px;
+    justify-content: start;
     max-height: 40px;   
   }
 `;

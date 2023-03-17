@@ -8,8 +8,7 @@ async function getTrending(page) {
       api_key: TOKEN,
       page,
     },
-    });
-    console.log(result);
+    }); 
      const trendsMov = result.data.results.map(
     ({ id, title, poster_path, vote_average }) => {
       return { id, title, poster_path, vote_average };
