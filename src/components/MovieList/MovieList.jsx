@@ -1,22 +1,27 @@
+import React from 'react';
 import propTypes from 'prop-types';
-import MovieCard from 'components/MovieCard/MovieCard';
-import { ListWrapper } from './MovieList.styled';
+import { Link } from 'react-router-dom';
+import { ListWrapper, MovTitle, MovItem } from './MovieList.styled';
 
-function MovieList({ movies }) {
+
+function MovieList({ movies, location }) {
   return (
     <ListWrapper>
-      {movies.map(({ id, title, poster, voteAverage, voteCount }) => {
-        return (
-          <MovieCard
-            key={id}
-            id={id}
-            title={title}
-            poster={poster}
-            voteAverage={voteAverage}
-            voteCount={voteCount}
-          />
-        );
-      })}
+       {movies &&
+        movies.map(movie => (
+          <MovItem key={movie.id} >
+            <Link              
+              to={`movies/${movie.id}`}
+              state={{ from: location }}
+            >
+              <MovTitle>{movie.title}</MovTitle>            
+                <img                  
+                  src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                  alt={movie.title}
+                />              
+            </Link>
+          </MovItem>
+        ))}
     </ListWrapper>
   );
 }
