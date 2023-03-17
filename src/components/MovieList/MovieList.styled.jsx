@@ -5,7 +5,7 @@ padding: 15px 50px;
   display: flex;
   flex-wrap: wrap;
   gap: 50px;
-  justify-content: space-around;
+  justify-content: center;
   list-style-type: none; 
 
 `
