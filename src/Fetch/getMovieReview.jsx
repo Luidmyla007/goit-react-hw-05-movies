@@ -1,5 +1,5 @@
 async function getMovieReviews(movieId) {
-  const key = 'd783920aea034ba2adae6031a0bf96c0';
+  const key = '51114562faac57108ae3113fba230ec4';
   const url = `https://api.themoviedb.org/3/movie/${movieId}/reviews`;
   const filter = `?api_key=${key}&language=en-US&page=1`;
 
