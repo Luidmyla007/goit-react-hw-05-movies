@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import no_image from '../../Images/no_image.png';
 import { Link } from 'react-router-dom';
 import { SearchMoviesList, SearchMovItem, SearchMovTitle } from './MoviespageList.styled';
 
@@ -14,10 +15,17 @@ function MoviesPageList ({query,  movies })  {
               state={{ from: `/movies?name=${query}` }}
             >
               <SearchMovTitle>{movie.title}</SearchMovTitle>              
-             <img                  
+              {movie.poster_path === null ? (
+                <img                  
+                  src={no_image}
+                  alt={movie.title}
+                />
+              ) : (
+                <img                  
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                   alt={movie.title}
-                />         
+                />
+              )}      
             </Link>
           </SearchMovItem>
         ))}

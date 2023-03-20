@@ -9,15 +9,15 @@ import { BsCameraVideo } from "react-icons/bs";
 export const Layout = () => {
   return (
     <Container>      
-      <Header><Title><HiFilm />FindYourMovie</Title>
+      <Header><Title><HiFilm/>FindYourMovie</Title>
         <nav>
           <Link to="/"><AiOutlineHome/> Home</Link>
           <Link to="/movies"><BsCameraVideo/> Movies</Link>
         </nav>
       </Header>
-      <Suspense fallback={<Loader />}>
+      <Suspense fallback={<Loader/>}>
         <Outlet />
-      </Suspense>
+      </Suspense>      
     </Container>
   );
 };

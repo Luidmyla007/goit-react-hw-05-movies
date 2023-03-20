@@ -15,7 +15,7 @@ export const MovTitle = styled.p`
   text-align: center;
   color: rgba(9, 60, 61, 1);
    text-shadow: 2px 2px 4px rgba(143, 199, 201, 1);
-
+margin: 0;
 `
 export const MovItem = styled.li` 
  width: calc((100%-80px) / 5);

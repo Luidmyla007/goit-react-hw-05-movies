@@ -3,16 +3,18 @@ import { NavLink } from 'react-router-dom';
 
 export const Container = styled.div`
   margin: 0 auto;
-  padding: 0;
+  padding: 0; 
+ 
+
 `;
 
 export const Header = styled.header`
 background-color: rgba(204, 224, 224, 1);
 background-image: linear-gradient(to right, rgba(204, 224, 224, 1), rgba(48, 56, 56, 1));
-margin-bottom: 36px;
+margin-bottom: 30px;
 padding-left: 100px;
 padding-bottom: 50px;
-padding-top: 50px;
+padding-top: 5px;
   > nav {
     display: flex;
     gap: 30px;
@@ -54,4 +56,5 @@ export const Link = styled(NavLink)`
       color: inherit;
     }
   }
-`;
+`
+;
