@@ -1,5 +1,5 @@
 import { useState, useEffect, Suspense } from 'react';
-import { Outlet, useParams, useLocation } from 'react-router-dom';
+import { Outlet, useParams, useLocation, Link } from 'react-router-dom';
 import  getMovieById  from 'Fetch/getMovieById.jsx';
 import { Loader } from '../../components/Loader/Loader';
 import {
@@ -12,8 +12,8 @@ import {
   OverviewContent,
   Genres,
   Title,
-  SubTitle,
-  Link
+  SubTitle
+  
 } from './MovieParams.styled';
 
 
@@ -44,7 +44,7 @@ const MovieDetails = () => {
   return (
     <>
       <GoBackLinkWrapper>
-        <Link to={location.state?.from ?? '/'}>Go back</Link>
+        <Link to={location.state?.from ?? '/'} style={{color: "black"}}>Go back</Link>
       </GoBackLinkWrapper>
       <WrapperMovie>
         <MoviePic

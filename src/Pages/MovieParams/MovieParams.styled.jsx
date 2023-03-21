@@ -1,29 +1,18 @@
 import styled from 'styled-components';
 
 export const GoBackLinkWrapper = styled.div`
-  padding: 0 150px;
+ 
   margin-bottom: 36px;
+  margin-left: 100px;
+  padding: 5px;
+  width: 60px;
+  border: 1px solid black;
+  border-radius: 5px;
+
+   > nav {
+       color: black;
+  }
 `;
-export const Link = styled.a`
-background-color: rgba(141, 150, 150, 1); 
-padding: 8px 16px;
-border-radius: 5px;
-text-decoration: none;
-color: black;
-font-size: 20px;
-font-weight: 500;
-transform: scale(1);
-box-shadow: none;
-  &:first child{
-    margin-right: 30px;
-  }
-  &:hover,
-  &:focus {
-    transform: scale(1.1);
-    border: 1px solid rgba(41, 126, 128, 1);;
-    box-shadow: 0px 8px 8px 4px rgba(30, 46, 46, 1);
-  }
-  `;
 
 export const WrapperMovie = styled.div`
   display: flex;
@@ -39,6 +28,7 @@ export const MovieDataWrapper = styled.div`
 
 export const MoviePic = styled.img`
   border-radius: 5px;
+  box-shadow: 10px 10px 8px 2px rgba(0, 0, 0, 0.3);
 `;
 
 export const OverviewContent = styled.p`
