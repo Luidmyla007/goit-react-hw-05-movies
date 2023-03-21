@@ -3,7 +3,7 @@ import { Outlet, useParams, useLocation, useNavigate } from 'react-router-dom';
 import  getMovieById  from 'Fetch/getMovieById.jsx';
 import { Loader } from '../../components/Loader/Loader';
 import { 
-  ButtonGoBack,
+  BtnGoBack,
   Label,
   WrapperMovie,
   MovieDataWrapper,
@@ -48,9 +48,9 @@ const MovieDetails = () => {
 
   return (
     <>
-      <ButtonGoBack type="button" onClick={onGoBack}>      
+      <BtnGoBack type="button" onClick={onGoBack}>      
         <Label>Go back</Label>
-      </ButtonGoBack>
+      </BtnGoBack>
       <WrapperMovie>
         <MoviePic
           src={`https://image.tmdb.org/t/p/w500${poster_path}`}

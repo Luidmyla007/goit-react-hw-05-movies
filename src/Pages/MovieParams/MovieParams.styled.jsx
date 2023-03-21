@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
-export const ButtonGoBack = styled.button`
+export const BtnGoBack = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -95,7 +95,7 @@ export const SubTitle = styled.h3`
 export const CustomLink = styled(NavLink)`
   font-size: 18px;
   background-color: #fff;
-  color: black;
+  color: rgba(9, 60, 61, 1); 
   padding: 8px 16px;
   border: 1px solid black;
   border-radius: 5px;

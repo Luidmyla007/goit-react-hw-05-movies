@@ -24,8 +24,10 @@ padding-top: 5px;
 export const Title = styled.h1`
 color: rgba(9, 60, 61, 1);
 padding-left: 10px;
-  letter-spacing: 1.7;
-  margin-bottom: 20px;
+font-size: 60px;
+text-shadow: 2px 2px 4px rgba(129, 210, 214, 1);
+letter-spacing: 1.7;
+margin-bottom: 20px;
 `;
 
 export const Link = styled(NavLink)`
@@ -52,7 +54,5 @@ export const Link = styled(NavLink)`
     &:focus {
       border: none;
       color: inherit;
-    }
-  }
-`
-;
+   }  
+`;
