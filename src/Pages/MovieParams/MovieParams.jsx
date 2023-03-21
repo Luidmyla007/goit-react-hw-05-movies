@@ -1,5 +1,5 @@
 import { useState, useEffect, Suspense } from 'react';
-import { Outlet, useParams, useLocation, Link, useNavigate } from 'react-router-dom';
+import { Outlet, useParams, useLocation, useNavigate } from 'react-router-dom';
 import  getMovieById  from 'Fetch/getMovieById.jsx';
 import { Loader } from '../../components/Loader/Loader';
 import { 
@@ -13,16 +13,17 @@ import {
   OverviewContent,
   Genres,
   Title,
-  SubTitle
-  
+  SubTitle,
+  CustomLink
 } from './MovieParams.styled';
 
 
 const MovieDetails = () => {
   const { id } = useParams();
   const [movieId, setMovieId] = useState(null);
-    const location = useLocation(); 
-    const navigate = useNavigate();
+  const location = useLocation(); 
+  const navigate = useNavigate();
+  const subLocation = location.state.from;
 
   useEffect(() => {
     getMovieById(id).then(setMovieId);
@@ -80,14 +81,14 @@ const MovieDetails = () => {
         <SubTitle>Additional Information</SubTitle>
         <MovieList>
           <li>
-            <Link to="cast" state={location.state}>
-              Cast
-            </Link>{' '}
+            <CustomLink to="cast" state={{ from: subLocation }}>
+               Cast
+            </CustomLink>
           </li>
           <li>
-            <Link to="review" state={location.state}>
-              Reviews
-            </Link>{' '}
+            <CustomLink to="reviews" state={{ from: subLocation }}>
+             Review
+            </CustomLink>
           </li>
         </MovieList>
       </MovieInfo>

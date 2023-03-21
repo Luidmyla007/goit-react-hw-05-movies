@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 export const ButtonGoBack = styled.button`
   display: flex;
@@ -89,4 +90,35 @@ export const SubTitle = styled.h3`
   font-size: 20px;
   font-weight: 500px;
   color: rgba(47, 56, 56, 1);
+`;
+
+export const CustomLink = styled(NavLink)`
+  font-size: 18px;
+  background-color: #fff;
+  color: black;
+  padding: 8px 16px;
+  border: 1px solid black;
+  border-radius: 5px;
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  font-weight: 500;
+  transform: scale(1);
+  box-shadow: none;
+  &:first child{
+  margin-right: 30px;
+  }
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
+    border: 1px solid rgba(41, 126, 128, 1);;
+    box-shadow: 0px 8px 8px 4px rgba(30, 46, 46, 1);
+  }
+  &.active {  
+    background-color: rgba(48, 136, 138, 1);
+    &:hover,
+    &:focus {
+      border: none;
+      color: inherit;
+    }
 `;
