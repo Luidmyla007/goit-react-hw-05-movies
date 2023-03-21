@@ -11,7 +11,7 @@ background-color: rgba(204, 224, 224, 1);
 background-image: linear-gradient(to right, rgba(204, 224, 224, 1), rgba(48, 56, 56, 1));
 margin-bottom: 30px;
 padding-left: 100px;
-padding-bottom: 50px;
+padding-bottom: 20px;
 padding-top: 5px;
   > nav {
     display: flex;

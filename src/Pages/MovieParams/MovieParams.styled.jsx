@@ -63,7 +63,7 @@ export const MovieInfo = styled.div`
   height: auto;
   background-color: rgba(204, 224, 224, 1);
   background-image: linear-gradient(to right, rgba(204, 224, 224, 1), rgba(48, 56, 56, 1));
-  padding: 30px 150px;
+  padding: 23px 150px;
   
 `;
 
