@@ -4,8 +4,6 @@ import { NavLink } from 'react-router-dom';
 export const Container = styled.div`
   margin: 0 auto;
   padding: 0; 
- 
-
 `;
 
 export const Header = styled.header`

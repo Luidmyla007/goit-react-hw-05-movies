@@ -1,4 +1,3 @@
-// import { useState } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { SearchContainer, SearchBar, SearchFormInput, SearchButton, } from './SearchForm.styled';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -30,9 +29,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
           < SearchFormInput            
             type="text"
-            name="query"
-            // value={searchValue}
-            // onChange={handleChange}        
+            name="query"                 
             autoFocus
             placeholder="Search images and photos"  
             size={40}

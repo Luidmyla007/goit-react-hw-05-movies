@@ -4,8 +4,7 @@ async function getMovieById(movieId) {
   const filter = `?api_key=${key}&language=en-US`;
 
   const response = await fetch(`${url}${filter}`);
-  const data = await response.json();
-
+  const data = await response.json();  
   return data;
 }
 
