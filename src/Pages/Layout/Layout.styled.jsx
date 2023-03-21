@@ -38,7 +38,7 @@ export const Link = styled(NavLink)`
   transform: scale(1);
   box-shadow: none;
   &:first child{
-    margin-right: 30px;
+  margin-right: 30px;
   }
   &:hover,
   &:focus {

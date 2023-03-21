@@ -1,9 +1,10 @@
 import { useState, useEffect, Suspense } from 'react';
-import { Outlet, useParams, useLocation, Link } from 'react-router-dom';
+import { Outlet, useParams, useLocation, Link, useNavigate } from 'react-router-dom';
 import  getMovieById  from 'Fetch/getMovieById.jsx';
 import { Loader } from '../../components/Loader/Loader';
-import {
-  GoBackLinkWrapper,
+import { 
+  ButtonGoBack,
+  Label,
   WrapperMovie,
   MovieDataWrapper,
   MovieList,
@@ -20,7 +21,8 @@ import {
 const MovieDetails = () => {
   const { id } = useParams();
   const [movieId, setMovieId] = useState(null);
-  const location = useLocation(); 
+    const location = useLocation(); 
+    const navigate = useNavigate();
 
   useEffect(() => {
     getMovieById(id).then(setMovieId);
@@ -39,13 +41,15 @@ const MovieDetails = () => {
     vote_average,
     genres,
     overview,
-  } = movieId;
+    } = movieId;
+
+    const onGoBack = () => navigate(location?.state?.from ?? '/');
 
   return (
     <>
-      <GoBackLinkWrapper>
-        <Link to={location.state?.from ?? '/'} style={{color: "black"}}>Go back</Link>
-      </GoBackLinkWrapper>
+      <ButtonGoBack type="button" onClick={onGoBack}>      
+        <Label>Go back</Label>
+      </ButtonGoBack>
       <WrapperMovie>
         <MoviePic
           src={`https://image.tmdb.org/t/p/w500${poster_path}`}

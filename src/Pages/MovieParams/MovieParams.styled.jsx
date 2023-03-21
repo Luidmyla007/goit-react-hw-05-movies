@@ -1,18 +1,33 @@
 import styled from 'styled-components';
 
-export const GoBackLinkWrapper = styled.div`
- 
-  margin-bottom: 36px;
-  margin-left: 100px;
-  padding: 5px;
-  width: 60px;
+export const ButtonGoBack = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 40px;
+  margin-bottom: 30px;
+  margin-left: 150px;
   border: 1px solid black;
   border-radius: 5px;
-
-   > nav {
-       color: black;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #fff;
+  color: rgba(9, 60, 61, 1); 
+  cursor: pointer;
+   transform: scale(1);  
+  :hover {
+    transform: scale(1.1);
+    border: 1px solid rgba(41, 126, 128, 1);;
+    box-shadow: 0px 8px 8px 4px rgba(30, 46, 46, 1);
   }
 `;
+
+export const Label = styled.span`
+  margin-left: 10px;
+`;
+
 
 export const WrapperMovie = styled.div`
   display: flex;
