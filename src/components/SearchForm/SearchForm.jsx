@@ -2,8 +2,6 @@ import { AiOutlineSearch } from 'react-icons/ai';
 import { SearchContainer, SearchBar, SearchFormInput, SearchButton, } from './SearchForm.styled';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-
-
  function SearchForm ()  {           
  const location = useLocation();
   const navigate = useNavigate();
@@ -23,7 +21,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
         <SearchBar  autoComplete="off" onSubmit={onSubmitForm}>
           <SearchButton type="submit" >
             <span >
-              <AiOutlineSearch width="12" height="12"/>              
+              <AiOutlineSearch width="12px" height="12px"/>              
             </span>
           </SearchButton>
 
@@ -31,7 +29,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
             type="text"
             name="query"                 
             autoFocus
-            placeholder="Search images and photos"  
+            placeholder="Search movie"  
             size={40}
           />
         </SearchBar>

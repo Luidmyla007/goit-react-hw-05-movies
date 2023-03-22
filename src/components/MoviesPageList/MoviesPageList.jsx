@@ -17,7 +17,7 @@ function MoviesPageList ({query,  movies })  {
               <SearchMovTitle>{movie.title}</SearchMovTitle>              
               {movie.poster_path === null ? (
                 <img                  
-                  src={no_image}
+                  src={no_image }
                   alt={movie.title}
                 />
               ) : (

@@ -1,10 +1,10 @@
 import { useState, useEffect, Suspense } from 'react';
-import { Outlet, useParams, useLocation, useNavigate } from 'react-router-dom';
+import { Outlet, useParams, useLocation } from 'react-router-dom';
 import  getMovieById  from 'Fetch/getMovieById.jsx';
 import { Loader } from '../../components/Loader/Loader';
 import { 
-  BtnGoBack,
-  Label,
+  GoBackWrapper,
+  Link,
   WrapperMovie,
   MovieDataWrapper,
   MovieList,
@@ -14,16 +14,14 @@ import {
   Genres,
   Title,
   SubTitle,
-  CustomLink
 } from './MovieParams.styled';
 
 
 const MovieDetails = () => {
   const { id } = useParams();
   const [movieId, setMovieId] = useState(null);
-  const location = useLocation(); 
-  const navigate = useNavigate();
-  const subLocation = location.state.from;
+  const location = useLocation();  
+  
 
   useEffect(() => {
     getMovieById(id).then(setMovieId);
@@ -42,15 +40,13 @@ const MovieDetails = () => {
     vote_average,
     genres,
     overview,
-    } = movieId;
-
-    const onGoBack = () => navigate(location?.state?.from ?? '/');
+    } = movieId;  
 
   return (
     <>
-      <BtnGoBack type="button" onClick={onGoBack}>      
-        <Label>Go back</Label>
-      </BtnGoBack>
+      <GoBackWrapper>
+        <Link to={location.state?.from ?? '/'}>Go back</Link>
+      </GoBackWrapper>
       <WrapperMovie>
         <MoviePic
           src={`https://image.tmdb.org/t/p/w500${poster_path}`}
@@ -81,14 +77,14 @@ const MovieDetails = () => {
         <SubTitle>Additional Information</SubTitle>
         <MovieList>
           <li>
-            <CustomLink to="cast" state={{ from: subLocation }}>
-               Cast
-            </CustomLink>
+            <Link to="cast" state={location.state}>
+              Cast
+            </Link>{' '}
           </li>
           <li>
-            <CustomLink to="reviews" state={{ from: subLocation }}>
-             Review
-            </CustomLink>
+            <Link to="review" state={location.state}>
+              Reviews
+            </Link>{' '}
           </li>
         </MovieList>
       </MovieInfo>

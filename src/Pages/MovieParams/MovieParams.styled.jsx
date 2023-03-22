@@ -1,34 +1,37 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
-export const BtnGoBack = styled.button`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100px;
-  height: 40px;
-  margin-bottom: 30px;
-  margin-left: 150px;
-  border: 1px solid black;
+export const GoBackWrapper = styled.div`
+  padding: 0 150px;
+  margin-bottom: 5px;
+`;
+
+export const Link = styled(NavLink)`
+  padding: 5px 16px;
   border-radius: 5px;
-  font-size: 20px;
+  text-decoration: none;
+  color: rgba(9, 60, 61, 1);
   font-weight: 500;
-  font-family: inherit;
+  transform: scale(1);
+  box-shadow: none;
+  border: 1px solid grey;
   background-color: #fff;
-  color: rgba(9, 60, 61, 1); 
-  cursor: pointer;
-   transform: scale(1);  
-  :hover {
+  &:hover,
+  &:focus {
     transform: scale(1.1);
-    border: 1px solid rgba(41, 126, 128, 1);;
-    box-shadow: 0px 8px 8px 4px rgba(30, 46, 46, 1);
+    border: 1px solid rgba(9, 60, 61, 1);
+    box-shadow: 0px 12px 8px 4px #0b78474d;
+  }
+  &.active {
+    color: color: rgba(9, 60, 61, 1);
+    background-color: #fff;
+    &:hover,
+    &:focus {
+     border: 1px solid rgba(9, 60, 61, 1);
+      color: inherit;
+    }
   }
 `;
-
-export const Label = styled.span`
-  margin-left: 10px;
-`;
-
 
 export const WrapperMovie = styled.div`
   display: flex;
@@ -63,7 +66,7 @@ export const MovieInfo = styled.div`
   height: auto;
   background-color: rgba(204, 224, 224, 1);
   background-image: linear-gradient(to right, rgba(204, 224, 224, 1), rgba(48, 56, 56, 1));
-  padding: 23px 150px;
+  padding: 10px 150px;
   
 `;
 
@@ -86,7 +89,7 @@ export const Title = styled.h2`
 export const SubTitle = styled.h3`  
   letter-spacing: 1.7;
   margin-bottom: 20px;
-  margin-top: 20px;
+  margin-top: 0px;
   font-size: 20px;
   font-weight: 500px;
   color: rgba(47, 56, 56, 1);

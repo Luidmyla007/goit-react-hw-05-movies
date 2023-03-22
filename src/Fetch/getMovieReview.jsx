@@ -4,8 +4,8 @@ async function getMovieReviews(movieId) {
   const filter = `?api_key=${key}&language=en-US&page=1`;
 
   const response = await fetch(`${url}${filter}`);
-  const data = await response.json();
-  return data;
+  const data = await response.json(); 
+  return data.results;
 }
 
 export default getMovieReviews;
