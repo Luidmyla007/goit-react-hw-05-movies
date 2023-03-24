@@ -1,20 +1,15 @@
+import PropTypes from 'prop-types';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { SearchContainer, SearchBar, SearchFormInput, SearchButton, } from './SearchForm.styled';
-import { useLocation, useNavigate } from 'react-router-dom';
 
- function SearchForm ()  {           
- const location = useLocation();
-  const navigate = useNavigate();
 
-  function onSubmitForm(e) {
+ function SearchForm ({ onSubmit }) {
+  const onSubmitForm = e => {
     e.preventDefault();
-    const value = e.target.elements.query.value;
-
-    navigate({
-      ...location,
-      search: `query=${value}`,
-    });
-  }
+    const { query } = e.target.elements;
+    onSubmit(query.value);
+    e.target.reset();
+  };
   
     return (
         <SearchContainer>
@@ -39,5 +34,8 @@ import { useLocation, useNavigate } from 'react-router-dom';
 };
 
 
+SearchForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
 
 export default SearchForm;
