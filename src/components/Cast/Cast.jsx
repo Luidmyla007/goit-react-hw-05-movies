@@ -16,28 +16,27 @@ const Cast = () => {
     };
 
     return (
-        <>
-            <ActorList>
-               { credits.length > 0 &&
-        credits.map(({ id, original_name, character, profile_path }) => {
-          return (
+    <>
+      {credits && credits.length > 0 ? (
+        <ActorList>
+          {credits.map(({ id, original_name, character, profile_path }) => {
+            return (
               <ActorCard key={id}>
-                   {profile_path === null ? (
-                <ActorPhoto src={No_photo } alt={original_name} width="200px" height="302px"/>
-              ) : (
-                <ActorPhoto                  
-                  src={`https://image.tmdb.org/t/p/w200${profile_path}`}
-                  alt={original_name}
-                />
-              )}                  
-              <h4>{original_name}</h4>
-              <p>Character: {character}</p>
-            </ActorCard>
-          );
-        })}
-            </ActorList>
+                {profile_path === null ? (
+                  <ActorPhoto src={No_photo} alt={original_name} width="200px" height="302px" />
+                ) : (
+                  <ActorPhoto
+                    src={`https://image.tmdb.org/t/p/w200${profile_path}`}
+                    alt={original_name}
+                  />
+                )}
+                <h4>{original_name}</h4>
+                <p>Character: {character}</p>
+              </ActorCard>
+            );
+          })}
+        </ActorList>) : (<p>Sorry, there is no information about this movie cast.</p>)}
         </>
-    )
-  
+  );  
 };
 export default Cast;
