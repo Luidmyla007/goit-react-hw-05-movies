@@ -1,19 +1,15 @@
 import React from 'react';
 import getSearchMovies from 'Fetch/getSearchMovies.jsx';
 import { useState, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import MoviesPageList from 'components/MoviesPageList/MoviesPageList';
 import SearchForm from 'components/SearchForm/SearchForm';
 
 const Movies = () => {
- const [movies, setMovies] = useState(null);
- const [searchParams, setSearchParams] = useSearchParams();
- const query = searchParams.get('query') ?? '';
+  const { search } = useLocation();
+   const query = new URLSearchParams(search).get('query') ?? '';
+  const [movies, setMovies] = useState(null);
  
-  const formSubmit = inputQuery => {
-    setMovies([]);
-    setSearchParams(inputQuery !== '' ? { query: inputQuery } : {});
-  };
 
  useEffect(() => {
     if (!query) return;
@@ -26,7 +22,7 @@ const Movies = () => {
 
   return (
     <>
-     <SearchForm  onSubmit={formSubmit} />
+     <SearchForm  />
      {movies && (
         <div>
           <MoviesPageList query={query} movies={movies} />

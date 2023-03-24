@@ -20,9 +20,7 @@ import {
 const MovieDetails = () => {
   const { id } = useParams();
   const [movieId, setMovieId] = useState(null);
-  const location = useLocation(); 
-  console.log(location.state);
-  const backLinkHref = location.state?.from ?? "/movies";
+  const location = useLocation();  
   
 
   useEffect(() => {
@@ -47,7 +45,7 @@ const MovieDetails = () => {
   return (
     <>
       <GoBackWrapper>
-        <Link to={backLinkHref}>Go back</Link>
+        <Link to={location.state?.from ?? '/'}>Go back</Link>
       </GoBackWrapper>
       <WrapperMovie>
         <MoviePic
