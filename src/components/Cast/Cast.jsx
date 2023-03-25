@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import getMovieCast from 'Fetch/getMovieCast.jsx';
 import No_photo from '../../Images/No_photo.png';
-import {ActorList, ActorCard, ActorPhoto } from './Cast.styled';
+import {ActorList, ActorCard, ActorPhoto, DefaultTitle } from './Cast.styled';
 
 const Cast = () => {
     const {id} = useParams();
@@ -35,7 +35,7 @@ const Cast = () => {
               </ActorCard>
             );
           })}
-        </ActorList>) : (<p>Sorry, there is no information about this movie cast.</p>)}
+        </ActorList>) : (<DefaultTitle>Sorry, there is no information about this movie cast.</DefaultTitle>)}
         </>
   );  
 };
