@@ -2,11 +2,15 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 export const GoBackWrapper = styled.div`
+width: 115px;
   padding: 0 150px;
   margin-bottom: 5px;
 `;
 
 export const Link = styled(NavLink)`
+display: flex;
+align-items: center;
+gap: 5px;
   padding: 5px 16px;
   border-radius: 5px;
   text-decoration: none;

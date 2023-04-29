@@ -15,7 +15,8 @@ import {
   Title,
   SubTitle,
 } from './MovieParams.styled';
-
+import { BiCommentDetail, BiGroup } from "react-icons/bi";
+import { BiArrowBack } from "react-icons/bi";
 
 const MovieDetails = () => {
   const { id } = useParams();
@@ -45,7 +46,7 @@ const MovieDetails = () => {
   return (
     <>
       <GoBackWrapper>
-        <Link to={location.state?.from ?? '/'}>Go back</Link>
+        <Link to={location.state?.from ?? '/'}><BiArrowBack/>Go back</Link>
       </GoBackWrapper>
       <WrapperMovie>
         <MoviePic
@@ -77,12 +78,12 @@ const MovieDetails = () => {
         <SubTitle>Additional Information</SubTitle>
         <MovieList>
           <li>
-            <Link to="cast" state={location.state}>
+            <Link to="cast" state={location.state}><BiGroup/>
               Cast
             </Link>{' '}
           </li>
           <li>
-            <Link to="review" state={location.state}>
+            <Link to="review" state={location.state}><BiCommentDetail/>
               Reviews
             </Link>{' '}
           </li>

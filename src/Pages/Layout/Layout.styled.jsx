@@ -22,6 +22,9 @@ padding-top: 5px;
 `;
 
 export const Title = styled.h1`
+display: flex;
+align-items: center;
+gap: 5px;
 color: rgba(9, 60, 61, 1);
 padding-left: 10px;
 font-size: 60px;
@@ -31,6 +34,10 @@ margin-bottom: 20px;
 `;
 
 export const Link = styled(NavLink)`
+display: flex;
+justify-content: center;
+gap: 5px;
+align-items: center;
   padding: 8px 16px;
   border-radius: 5px;
   text-decoration: none;

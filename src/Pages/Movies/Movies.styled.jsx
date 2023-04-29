@@ -106,6 +106,7 @@ export const SearchMovTitle = styled.p`
 `;
 
 export const MyLink = styled(Link)`
+
   font-size: 20px;
   font-weight: 400;
   color: black;
